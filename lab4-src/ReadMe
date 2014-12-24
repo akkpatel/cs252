@@ -1,0 +1,20 @@
+Part1:
+  Question 3: It keeps printing character "A", "B" and "C" in random order.
+
+  Question 5: It keeps printing character "C" in an infinite loop, because before the threads are called its already
+		gone to another function in thr.cc where it is in infinite loop without any exit, this is the reason it keeps printing "C".
+
+
+Part3:
+  Question 4: 
+			Kernel		User		Real
+	Pthread:	0m1.068s	0m1.672s	0m1.378s
+Spinlock(without thr): 0m0.004s	0m2.588s	0m1.302s
+Spinlock(with thr):	0m0.348s	0m0.696s      0m0.527s
+
+
+1. kernel time with thread is slower then the one without. But the user time is faster with thread in spinlocks.
+
+1. The programs spends a lot of time in user mode, without thread but takes faster time in kernel and rel.
+Count_spin with thread is lot faster in kernel though.
+
